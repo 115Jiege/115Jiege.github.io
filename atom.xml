@@ -3,11 +3,11 @@
   <title>Jiege</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://115jiege.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://115jiege.github.io/"/>
   <updated>2022-07-22T09:52:23.714Z</updated>
-  <id>http://example.com/</id>
+  <id>https://115jiege.github.io/</id>
   
   <author>
     <name>Jiege</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Jiege的第一篇博客</title>
-    <link href="http://example.com/2022/07/21/hello-world/"/>
-    <id>http://example.com/2022/07/21/hello-world/</id>
+    <link href="https://115jiege.github.io/2022/07/21/hello-world/"/>
+    <id>https://115jiege.github.io/2022/07/21/hello-world/</id>
     <published>2022-07-21T06:21:16.826Z</published>
     <updated>2022-07-22T09:52:23.714Z</updated>
     
