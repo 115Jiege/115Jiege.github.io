@@ -6,7 +6,7 @@
   <link href="https://115jiege.github.io/atom.xml" rel="self"/>
   
   <link href="https://115jiege.github.io/"/>
-  <updated>2022-07-22T09:52:23.714Z</updated>
+  <updated>2022-07-25T08:56:50.831Z</updated>
   <id>https://115jiege.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Jiege的第一篇博客</title>
-    <link href="https://115jiege.github.io/2022/07/21/hello-world/"/>
-    <id>https://115jiege.github.io/2022/07/21/hello-world/</id>
+    <title>针对一种新型Modbus Dos攻击的讨论</title>
+    <link href="https://115jiege.github.io/2022/07/21/Modbus%20DOS%E6%94%BB%E5%87%BB%E2%80%94%E2%80%941/"/>
+    <id>https://115jiege.github.io/2022/07/21/Modbus%20DOS%E6%94%BB%E5%87%BB%E2%80%94%E2%80%941/</id>
     <published>2022-07-21T06:21:16.826Z</published>
-    <updated>2022-07-22T09:52:23.714Z</updated>
+    <updated>2022-07-25T08:56:50.831Z</updated>
     
-    <content type="html"><![CDATA[<p>工作一个周，摸鱼一个周，摩尔庄园也玩腻了，在much哥哥的诱惑下开始建立自己的博客。平时就记录一些学习的新知识和生活上的小乐趣，yey!</p><h2 id="WORK"><a href="#WORK" class="headerlink" title="WORK"></a>WORK</h2><h3 id="Modbus-学习情况"><a href="#Modbus-学习情况" class="headerlink" title="Modbus 学习情况"></a>Modbus 学习情况</h3><p>Modbus协议广泛用于工控系统（ICS&#x2F;SCADA）上，主要分为Modbus TCP、Modbus RTU、Modbus ASCⅡ。目前学习的是Modbus TCP。</p><h4 id="Modbus-TCP包结构"><a href="#Modbus-TCP包结构" class="headerlink" title="Modbus TCP包结构"></a>Modbus TCP包结构</h4><span id="more"></span><p><img src="/../pic/Modbus%20TCP%20structure.png" alt="img"></p><p>Modbus TCP包最大为260字节：其中，MBAP报头占7字节，PDU最大可占252字节。<br>MBAP报头：事务处理ID 2字节，协议ID 2字节，长度2字节<br>PDU：单位ID 1字节，功能码 1字节，数据部分最大252字节</p><h4 id="poster2022-Wheels-on-the-Modbus-Attacking-ModbusTCP-Communications"><a href="#poster2022-Wheels-on-the-Modbus-Attacking-ModbusTCP-Communications" class="headerlink" title="poster2022-Wheels on the Modbus - Attacking ModbusTCP Communications"></a>poster2022-Wheels on the Modbus - Attacking ModbusTCP Communications</h4><p>师兄发的poster</p><p><strong>1.关注点</strong><br>Modbus TCP协议及漏洞<br>攻击：Mimt、Dos、未授权的访问攻击<br><strong>2.演示工具</strong><br>Mobdus服务器仿真工具：Modbuspal<br>wireshark<br>scapy<br><strong>3.创新点</strong><br>利用包寄存器构造flood<br><strong>4.试验台</strong><br>实验试验台由西门子标志PLC、温度和湿度传感器组成。<br>温度和湿度的值被不断地读取和实时显示在HMI上。<br>这些传感器都是硬连接到西门子LogoPLC的，而PLC使用ModbusTCP将这些值实时通信到HMI。<br>温度值存储在保持寄存器中，而湿度值存储在输入寄存器中。<br>HMI分别使用Modbus函数代码0x03（读取保持寄存器）和0x04（读取输入寄存器）定期轮询西门子LogoPLC的温度和湿度值。<br><strong>度量标准</strong>：通讯时间<br>一个查询-响应-攻击循环大约7 ms，在循环之间大约100 ms（100 ms是用于编写和注入我们的恶意数据包到网络的时间段）<br><strong>5.手段</strong><br>修改MBAP标头的长度字段（长度+2）<br>PDU层中加2个附加字段（4字节）<br>注入<br><strong>6.实验结果</strong><br>现场洪水攻击有效地迫使PLC进入只听模式约7分钟，最终达到DoS场景</p>]]></content>
+    <content type="html"><![CDATA[<p>工作一个周，摸鱼一个周，摩尔庄园也玩腻了，在much哥哥的诱惑下开始建立自己的博客。平时就记录一些学习的新知识和生活上的小乐趣，yey!</p><h2 id="WORK"><a href="#WORK" class="headerlink" title="WORK"></a>WORK</h2><h3 id="Modbus-学习情况"><a href="#Modbus-学习情况" class="headerlink" title="Modbus 学习情况"></a>Modbus 学习情况</h3><p>Modbus协议广泛用于工控系统（ICS&#x2F;SCADA）上，主要分为Modbus TCP、Modbus RTU、Modbus ASCⅡ。目前学习的是Modbus TCP。</p><h4 id="Modbus-TCP包结构"><a href="#Modbus-TCP包结构" class="headerlink" title="Modbus TCP包结构"></a>Modbus TCP包结构</h4><span id="more"></span><p><img src="/../pic/Modbus%20TCP%20structure.png" alt="img"></p><p>Modbus TCP包最大为260字节：其中，MBAP报头占7字节，PDU最大可占252字节。<br>MBAP报头：事务处理ID 2字节，协议ID 2字节，长度2字节<br>PDU：单位ID 1字节，功能码 1字节，数据部分最大252字节</p><h4 id="poster2022-Wheels-on-the-Modbus-Attacking-ModbusTCP-Communications"><a href="#poster2022-Wheels-on-the-Modbus-Attacking-ModbusTCP-Communications" class="headerlink" title="poster2022-Wheels on the Modbus - Attacking ModbusTCP Communications"></a>poster2022-Wheels on the Modbus - Attacking ModbusTCP Communications</h4><p>师兄发的poster</p><p><strong>1.关注点</strong><br>Modbus TCP协议及漏洞<br>攻击：Mimt、Dos、未授权的访问攻击<br><strong>2.演示工具</strong><br>Mobdus服务器仿真工具：Modbuspal<br>wireshark<br>scapy<br><strong>3.创新点</strong><br>利用包寄存器构造flood<br><strong>4.试验台</strong><br>实验试验台由西门子标志PLC、温度和湿度传感器组成。<br>温度和湿度的值被不断地读取和实时显示在HMI上。<br>这些传感器都是硬连接到西门子LogoPLC的，而PLC使用ModbusTCP将这些值实时通信到HMI。<br>温度值存储在保持寄存器中，而湿度值存储在输入寄存器中。<br>HMI分别使用Modbus函数代码0x03（读取保持寄存器）和0x04（读取输入寄存器）定期轮询西门子LogoPLC的温度和湿度值。<br><strong>度量标准</strong>：通讯时间<br>一个查询-响应-攻击循环大约7 ms，在循环之间大约100 ms（100 ms是用于编写和注入我们的恶意数据包到网络的时间段）<br><strong>5.手段</strong><br>修改MBAP标头的长度字段（长度+2）<br>PDU层中加2个附加字段（4字节）<br>注入<br><strong>6.实验结果</strong><br>现场洪水攻击有效地迫使PLC进入只听模式约7分钟，最终达到DoS场景</p><p><strong>小结论</strong><br>这篇论文中通过轮询两个寄存器来模拟HMI和PLC之间的通讯（一般两者间的ModbusTCP通信是连续循环的）；实验中修改PDU报头中的长度字段（长度字段占2字节，数值范围0-2^16）使长度数值＋2，就有可能使Modbus ADU超出最大260字节，但长度字段未超出数值范围，最终导致通信中断，实现Dos攻击。<br>这类针对设备的Dos攻击一般都是发包，效果极其明显；目前需要研究的是能否实现对单个寄存器写操作的DOS攻击（使用smod框架）……</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;工作一个周，摸鱼一个周，摩尔庄园也玩腻了，在much哥哥的诱惑下开始建立自己的博客。平时就记录一些学习的新知识和生活上的小乐趣，yey!&lt;/p&gt;
