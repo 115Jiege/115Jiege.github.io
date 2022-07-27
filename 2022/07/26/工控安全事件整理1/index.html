@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://115jiege.github.io/pic/stuxnet.png">
 <meta property="article:published_time" content="2022-07-26T00:23:28.000Z">
-<meta property="article:modified_time" content="2022-07-26T07:46:56.020Z">
+<meta property="article:modified_time" content="2022-07-27T00:06:08.297Z">
 <meta property="article:author" content="Jiege">
 <meta property="article:tag" content="工控事件">
 <meta name="twitter:card" content="summary">
@@ -194,10 +194,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-26 08:23:28 / 修改时间：15:46:56" itemprop="dateCreated datePublished" datetime="2022-07-26T08:23:28+08:00">2022-07-26</time>
+              <time title="创建时间：2022-07-26 08:23:28" itemprop="dateCreated datePublished" datetime="2022-07-26T08:23:28+08:00">2022-07-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-27 08:06:08" itemprop="dateModified" datetime="2022-07-27T08:06:08+08:00">2022-07-27</time>
+              </span>
 
           
   
@@ -219,7 +225,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>610</span>
+              <span>966</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -247,6 +253,7 @@
 <p><strong>一些小故事</strong><br>
 周一下班张总找人帮我搬洗衣机和冰箱，她说找了个阿姨搬。阿姨才43看起来比她都老，她说阿姨是真的离婚带三娃：大女儿高考考得不好要上大专，一年学费一万七；二女儿还在上高中；小儿子上初中；全家就靠阿姨一个人收废品收旧货赚钱。阿姨一家四口住在只有一室一卫的公寓里，阿姨说二女儿在高中为了省钱，午饭能不吃就不吃，为了养家糊口，阿姨就还做点零工。张总虽然看起来冷酷无情，但是觉得当妈的养孩子不容易，没什么能帮上的，多给一点是一点。<br>
 张总对白天的事颇有感悟，昨晚跟我谈人生，说觉得阿姨日子过得太苦太累，但还是盼着苦尽甘来。无论怎么样，日子都要过下去的，心里有点盼头总是好的。<br>
+-----TBC-------<br>
 闲事就说到这。</p>
 <h1>WORK</h1>
 <p>整理一下目前收集的典型工控安全事件</p>
@@ -257,7 +264,21 @@
 <strong>攻击对象</strong>:国家重要基础设施<br>
 <strong>漏洞利用</strong>:MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>
 模拟的攻击路径<br>
-<img src="/../pic/stuxnet.png" alt="img"></p>
+<img src="/../pic/stuxnet.png" alt="img"><br>
+Stuxnet首先是感染外部主机，然后感染u盘，利用Link文件漏洞（MS10-046）传播到内网。<br>
+在内网中，通过快捷方式文件解析漏洞、RPC远程执行漏洞（MS08-067)、打印机后台程序服务漏洞（MS10-061），实现联网主机的传播（横向渗透），到达装有WIN CC的工作站。<br>
+当被感染的工作站连接到PLC，Stuxnet部署恶意代码，向PLC发送特定指令。<br>
+MS10-073、MS10-092用于提权。<br>
+-----TBC-------</p>
+<h2 id="2-乌克兰电网事件"><a class="header-anchor" href="#2-乌克兰电网事件">¶</a>2.乌克兰电网事件</h2>
+<h2 id="3-FLAME侵袭中东地区事件"><a class="header-anchor" href="#3-FLAME侵袭中东地区事件">¶</a>3.FLAME侵袭中东地区事件</h2>
+<h2 id="4-EastNet事件"><a class="header-anchor" href="#4-EastNet事件">¶</a>4.EastNet事件</h2>
+<h2 id="5-DARKSIDE组织攻击美最大燃油公司事件"><a class="header-anchor" href="#5-DARKSIDE组织攻击美最大燃油公司事件">¶</a>5.DARKSIDE组织攻击美最大燃油公司事件</h2>
+<h2 id="6-Havex"><a class="header-anchor" href="#6-Havex">¶</a>6.Havex</h2>
+<h2 id="7-PLC-Blaster"><a class="header-anchor" href="#7-PLC-Blaster">¶</a>7.PLC-Blaster</h2>
+<h2 id="8-PLC-Rookit"><a class="header-anchor" href="#8-PLC-Rookit">¶</a>8.PLC-Rookit</h2>
+<h2 id="9-IRONGATE"><a class="header-anchor" href="#9-IRONGATE">¶</a>9.IRONGATE</h2>
+<p>——————test——————</p>
 
     </div>
 
@@ -368,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">LIFE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">WORK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9C%87%E7%BD%91%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">1.震网事件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">LIFE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">WORK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9C%87%E7%BD%91%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">1.震网事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B9%8C%E5%85%8B%E5%85%B0%E7%94%B5%E7%BD%91%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">2.乌克兰电网事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-FLAME%E4%BE%B5%E8%A2%AD%E4%B8%AD%E4%B8%9C%E5%9C%B0%E5%8C%BA%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">3.FLAME侵袭中东地区事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-EastNet%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">4.EastNet事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-DARKSIDE%E7%BB%84%E7%BB%87%E6%94%BB%E5%87%BB%E7%BE%8E%E6%9C%80%E5%A4%A7%E7%87%83%E6%B2%B9%E5%85%AC%E5%8F%B8%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">5.DARKSIDE组织攻击美最大燃油公司事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Havex"><span class="nav-number">2.6.</span> <span class="nav-text">6.Havex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-PLC-Blaster"><span class="nav-number">2.7.</span> <span class="nav-text">7.PLC-Blaster</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-PLC-Rookit"><span class="nav-number">2.8.</span> <span class="nav-text">8.PLC-Rookit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-IRONGATE"><span class="nav-number">2.9.</span> <span class="nav-text">9.IRONGATE</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -455,7 +476,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -6,7 +6,7 @@
   <link href="https://115jiege.github.io/atom.xml" rel="self"/>
   
   <link href="https://115jiege.github.io/"/>
-  <updated>2022-07-26T07:46:56.020Z</updated>
+  <updated>2022-07-27T00:06:08.297Z</updated>
   <id>https://115jiege.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%861/"/>
     <id>https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%861/</id>
     <published>2022-07-26T00:23:28.000Z</published>
-    <updated>2022-07-26T07:46:56.020Z</updated>
+    <updated>2022-07-27T00:06:08.297Z</updated>
     
-    <content type="html"><![CDATA[<p>终于来啦，杰哥的第二篇博客</p><h1>LIFE</h1><p>每天6点起太绝望了，张总给我租了个房子yey<br>虽然是老房子但是小区还蛮漂亮的，吃完饭可以去山上散步或者去海边溜达。</p><span id="more"></span><p>这周一开始陆陆续续的把东西搬过来，张总收拾我的衣服居然只收拾出来半箱，加上猪猪给我的紫色史迪仔刚好满一箱。发了工资得买点衣服了。</p><p><strong>一些小故事</strong><br>周一下班张总找人帮我搬洗衣机和冰箱，她说找了个阿姨搬。阿姨才43看起来比她都老，她说阿姨是真的离婚带三娃：大女儿高考考得不好要上大专，一年学费一万七；二女儿还在上高中；小儿子上初中；全家就靠阿姨一个人收废品收旧货赚钱。阿姨一家四口住在只有一室一卫的公寓里，阿姨说二女儿在高中为了省钱，午饭能不吃就不吃，为了养家糊口，阿姨就还做点零工。张总虽然看起来冷酷无情，但是觉得当妈的养孩子不容易，没什么能帮上的，多给一点是一点。<br>张总对白天的事颇有感悟，昨晚跟我谈人生，说觉得阿姨日子过得太苦太累，但还是盼着苦尽甘来。无论怎么样，日子都要过下去的，心里有点盼头总是好的。<br>闲事就说到这。</p><h1>WORK</h1><p>整理一下目前收集的典型工控安全事件</p><h2 id="1-震网事件"><a class="header-anchor" href="#1-震网事件">¶</a>1.震网事件</h2><p>提起工控安全就不得不提最最最典型的震网事件。<br><strong>震网事件</strong>:2010年9月24日，伊朗核设施爆出Stuxnet病毒（“震网病毒”）攻击，导致其核设施不能正常运行。<br><strong>传播介质</strong>:u盘<br><strong>攻击对象</strong>:国家重要基础设施<br><strong>漏洞利用</strong>:MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>模拟的攻击路径<br><img src="/../pic/stuxnet.png" alt="img"></p>]]></content>
+    <content type="html"><![CDATA[<p>终于来啦，杰哥的第二篇博客</p><h1>LIFE</h1><p>每天6点起太绝望了，张总给我租了个房子yey<br>虽然是老房子但是小区还蛮漂亮的，吃完饭可以去山上散步或者去海边溜达。</p><span id="more"></span><p>这周一开始陆陆续续的把东西搬过来，张总收拾我的衣服居然只收拾出来半箱，加上猪猪给我的紫色史迪仔刚好满一箱。发了工资得买点衣服了。</p><p><strong>一些小故事</strong><br>周一下班张总找人帮我搬洗衣机和冰箱，她说找了个阿姨搬。阿姨才43看起来比她都老，她说阿姨是真的离婚带三娃：大女儿高考考得不好要上大专，一年学费一万七；二女儿还在上高中；小儿子上初中；全家就靠阿姨一个人收废品收旧货赚钱。阿姨一家四口住在只有一室一卫的公寓里，阿姨说二女儿在高中为了省钱，午饭能不吃就不吃，为了养家糊口，阿姨就还做点零工。张总虽然看起来冷酷无情，但是觉得当妈的养孩子不容易，没什么能帮上的，多给一点是一点。<br>张总对白天的事颇有感悟，昨晚跟我谈人生，说觉得阿姨日子过得太苦太累，但还是盼着苦尽甘来。无论怎么样，日子都要过下去的，心里有点盼头总是好的。<br>-----TBC-------<br>闲事就说到这。</p><h1>WORK</h1><p>整理一下目前收集的典型工控安全事件</p><h2 id="1-震网事件"><a class="header-anchor" href="#1-震网事件">¶</a>1.震网事件</h2><p>提起工控安全就不得不提最最最典型的震网事件。<br><strong>震网事件</strong>:2010年9月24日，伊朗核设施爆出Stuxnet病毒（“震网病毒”）攻击，导致其核设施不能正常运行。<br><strong>传播介质</strong>:u盘<br><strong>攻击对象</strong>:国家重要基础设施<br><strong>漏洞利用</strong>:MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>模拟的攻击路径<br><img src="/../pic/stuxnet.png" alt="img"><br>Stuxnet首先是感染外部主机，然后感染u盘，利用Link文件漏洞（MS10-046）传播到内网。<br>在内网中，通过快捷方式文件解析漏洞、RPC远程执行漏洞（MS08-067)、打印机后台程序服务漏洞（MS10-061），实现联网主机的传播（横向渗透），到达装有WIN CC的工作站。<br>当被感染的工作站连接到PLC，Stuxnet部署恶意代码，向PLC发送特定指令。<br>MS10-073、MS10-092用于提权。<br>-----TBC-------</p><h2 id="2-乌克兰电网事件"><a class="header-anchor" href="#2-乌克兰电网事件">¶</a>2.乌克兰电网事件</h2><h2 id="3-FLAME侵袭中东地区事件"><a class="header-anchor" href="#3-FLAME侵袭中东地区事件">¶</a>3.FLAME侵袭中东地区事件</h2><h2 id="4-EastNet事件"><a class="header-anchor" href="#4-EastNet事件">¶</a>4.EastNet事件</h2><h2 id="5-DARKSIDE组织攻击美最大燃油公司事件"><a class="header-anchor" href="#5-DARKSIDE组织攻击美最大燃油公司事件">¶</a>5.DARKSIDE组织攻击美最大燃油公司事件</h2><h2 id="6-Havex"><a class="header-anchor" href="#6-Havex">¶</a>6.Havex</h2><h2 id="7-PLC-Blaster"><a class="header-anchor" href="#7-PLC-Blaster">¶</a>7.PLC-Blaster</h2><h2 id="8-PLC-Rookit"><a class="header-anchor" href="#8-PLC-Rookit">¶</a>8.PLC-Rookit</h2><h2 id="9-IRONGATE"><a class="header-anchor" href="#9-IRONGATE">¶</a>9.IRONGATE</h2><p>——————test——————</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;终于来啦，杰哥的第二篇博客&lt;/p&gt;
