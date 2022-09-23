@@ -6,7 +6,7 @@
   <link href="https://115jiege.github.io/atom.xml" rel="self"/>
   
   <link href="https://115jiege.github.io/"/>
-  <updated>2022-07-27T00:06:08.297Z</updated>
+  <updated>2022-09-23T06:37:20.509Z</updated>
   <id>https://115jiege.github.io/</id>
   
   <author>
@@ -17,24 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>工控安全事件整理1</title>
+    <title>工控安全事件整理</title>
     <link href="https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%861/"/>
     <id>https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%861/</id>
     <published>2022-07-26T00:23:28.000Z</published>
-    <updated>2022-07-27T00:06:08.297Z</updated>
+    <updated>2022-09-23T06:37:20.509Z</updated>
     
-    <content type="html"><![CDATA[<p>终于来啦，杰哥的第二篇博客</p><h1>LIFE</h1><p>每天6点起太绝望了，张总给我租了个房子yey<br>虽然是老房子但是小区还蛮漂亮的，吃完饭可以去山上散步或者去海边溜达。</p><span id="more"></span><p>这周一开始陆陆续续的把东西搬过来，张总收拾我的衣服居然只收拾出来半箱，加上猪猪给我的紫色史迪仔刚好满一箱。发了工资得买点衣服了。</p><p><strong>一些小故事</strong><br>周一下班张总找人帮我搬洗衣机和冰箱，她说找了个阿姨搬。阿姨才43看起来比她都老，她说阿姨是真的离婚带三娃：大女儿高考考得不好要上大专，一年学费一万七；二女儿还在上高中；小儿子上初中；全家就靠阿姨一个人收废品收旧货赚钱。阿姨一家四口住在只有一室一卫的公寓里，阿姨说二女儿在高中为了省钱，午饭能不吃就不吃，为了养家糊口，阿姨就还做点零工。张总虽然看起来冷酷无情，但是觉得当妈的养孩子不容易，没什么能帮上的，多给一点是一点。<br>张总对白天的事颇有感悟，昨晚跟我谈人生，说觉得阿姨日子过得太苦太累，但还是盼着苦尽甘来。无论怎么样，日子都要过下去的，心里有点盼头总是好的。<br>-----TBC-------<br>闲事就说到这。</p><h1>WORK</h1><p>整理一下目前收集的典型工控安全事件</p><h2 id="1-震网事件"><a class="header-anchor" href="#1-震网事件">¶</a>1.震网事件</h2><p>提起工控安全就不得不提最最最典型的震网事件。<br><strong>震网事件</strong>:2010年9月24日，伊朗核设施爆出Stuxnet病毒（“震网病毒”）攻击，导致其核设施不能正常运行。<br><strong>传播介质</strong>:u盘<br><strong>攻击对象</strong>:国家重要基础设施<br><strong>漏洞利用</strong>:MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>模拟的攻击路径<br><img src="/../pic/stuxnet.png" alt="img"><br>Stuxnet首先是感染外部主机，然后感染u盘，利用Link文件漏洞（MS10-046）传播到内网。<br>在内网中，通过快捷方式文件解析漏洞、RPC远程执行漏洞（MS08-067)、打印机后台程序服务漏洞（MS10-061），实现联网主机的传播（横向渗透），到达装有WIN CC的工作站。<br>当被感染的工作站连接到PLC，Stuxnet部署恶意代码，向PLC发送特定指令。<br>MS10-073、MS10-092用于提权。<br>-----TBC-------</p><h2 id="2-乌克兰电网事件"><a class="header-anchor" href="#2-乌克兰电网事件">¶</a>2.乌克兰电网事件</h2><h2 id="3-FLAME侵袭中东地区事件"><a class="header-anchor" href="#3-FLAME侵袭中东地区事件">¶</a>3.FLAME侵袭中东地区事件</h2><h2 id="4-EastNet事件"><a class="header-anchor" href="#4-EastNet事件">¶</a>4.EastNet事件</h2><h2 id="5-DARKSIDE组织攻击美最大燃油公司事件"><a class="header-anchor" href="#5-DARKSIDE组织攻击美最大燃油公司事件">¶</a>5.DARKSIDE组织攻击美最大燃油公司事件</h2><h2 id="6-Havex"><a class="header-anchor" href="#6-Havex">¶</a>6.Havex</h2><h2 id="7-PLC-Blaster"><a class="header-anchor" href="#7-PLC-Blaster">¶</a>7.PLC-Blaster</h2><h2 id="8-PLC-Rookit"><a class="header-anchor" href="#8-PLC-Rookit">¶</a>8.PLC-Rookit</h2><h2 id="9-IRONGATE"><a class="header-anchor" href="#9-IRONGATE">¶</a>9.IRONGATE</h2><p>——————test——————</p>]]></content>
+    <content type="html"><![CDATA[<p>终于来啦，杰哥的第二篇博客</p><h1>LIFE</h1><span id="more"></span><h1>WORK</h1><p>整理一下目前收集的典型工控安全事件</p><h2 id="1-震网事件"><a class="header-anchor" href="#1-震网事件">¶</a>1.震网事件</h2><h3 id="事件"><a class="header-anchor" href="#事件">¶</a>事件 :</h3><p>2010年9月24日，伊朗核设施爆出Stuxnet病毒（“震网病毒”）攻击，导致其核设施不能正常运行。</p><h3 id="传播介质"><a class="header-anchor" href="#传播介质">¶</a>传播介质 :</h3><p>u盘</p><h3 id="攻击对象"><a class="header-anchor" href="#攻击对象">¶</a>攻击对象 :</h3><p>国家重要基础设施</p><h3 id="漏洞利用-："><a class="header-anchor" href="#漏洞利用-：">¶</a>漏洞利用 ：</h3><p>MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>Stuxnet首先是感染外部主机，然后感染u盘，利用Link文件漏洞（MS10-046）传播到内网。<br>在内网中，通过快捷方式文件解析漏洞、RPC远程执行漏洞（MS08-067)、打印机后台程序服务漏洞（MS10-061），实现联网主机的传播（横向渗透），到达装有WIN CC的工作站。<br>当被感染的工作站连接到PLC，Stuxnet部署恶意代码，向PLC发送特定指令。<br>MS10-073、MS10-092用于提权。</p><h3 id="攻击过程-："><a class="header-anchor" href="#攻击过程-：">¶</a>攻击过程 ：</h3><p>Stuxnet蠕虫利用多个零日漏洞和U盘等移动设备在工业互联网中传播，最终目的是到达WIN CC主机。攻击者利用WIN CC存在的硬编码漏洞，窃取数据库信息，保存密码；利用项目文件加载DLL文件出错，窃取正常的生产数据。通过对得到的生产数据进行深入分析，可以构造恶意DLL文件，然后攻击者操纵固件替换恶意DLL，实现恶意操作。震网事件中，攻击者修改了数据库中的PID算法相关参数，导致离心机转速发生变化。为了防止安全操作员得到警报以及系统做出响应，攻击者可能采用重放攻击重放抓取的正常流量；或者修改报警设置，例如将内存代码修改为固定值或篡改汇编级指令代码。</p><h2 id="2-乌克兰电网事件"><a class="header-anchor" href="#2-乌克兰电网事件">¶</a>2.乌克兰电网事件</h2><h3 id="事件-v2"><a class="header-anchor" href="#事件-v2">¶</a>事件 :</h3><p>2015年12月23日，乌克兰电网遭遇突发停电事故。本次停电事故由7个变电站开关动作引起，导致80000个用户停电，停电时间为3到6小时不等。这次停电不是因为电力短缺，而是遭到了黑客攻击。</p><h3 id="传播介质-v2"><a class="header-anchor" href="#传播介质-v2">¶</a>传播介质 :</h3><p>恶意组件BlackEnergy（该恶意软件最早可追溯到2007年，由俄罗斯地下黑客组织开发并广泛使用，包括用来“刺探”全球各国的电力公司。）</p><h3 id="攻击对象-v2"><a class="header-anchor" href="#攻击对象-v2">¶</a>攻击对象 :</h3><p>乌克兰电力公司</p><h3 id="漏洞利用-：-v2"><a class="header-anchor" href="#漏洞利用-：-v2">¶</a>漏洞利用 ：</h3><p>CVE-2014-4114(OLE包管理INF 任意代码执行漏洞)<br><strong>安天工作室分析的攻击流程</strong><br>Office类型的漏洞利用(CVE-2014-4114)–&gt;邮件–&gt;下载恶意组件BlackEnergy侵入员工电力办公系统–&gt;BlackEnergy继续下载恶意组件(KillDisk)–&gt;擦除电脑数据破坏HMI软件监视管理系统<br><img src="/../pic/blackenergy%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B.jpg" alt="img"></p><h2 id="3-FLAME侵袭中东地区事件"><a class="header-anchor" href="#3-FLAME侵袭中东地区事件">¶</a>3.FLAME侵袭中东地区事件</h2><p>Flame ( Worm.Win32.Flame ，又称 Flamer 或 sKyWlper 、Skywiper 等），中文名“火焰病毒”、“超级火焰病毒”。Flame 被包括世界电信联盟等官方以及卡巴斯基等国际权威厂商认定为迄今为止最复杂、最危险、最致命的病毒威胁。</p><h3 id="事件-v3"><a class="header-anchor" href="#事件-v3">¶</a>事件:</h3><p>2012年5月，俄罗斯安全专家发现一种威力强大的电脑病毒火焰(Flame)在中东地区大范围传播。卡巴斯基称，Flame实际上是一个间谍工具包。至少过去两年中，Flame病毒已感染了伊朗、黎巴嫩、叙利亚、苏丹以及其他中东和北非国家的相应目标计算机系统。</p><h3 id="传播"><a class="header-anchor" href="#传播">¶</a>传播 :</h3><p>该病毒可以通过USB存储器以及网络复制和传播，并能接受来自世界各地多个服务器的指令。</p><h3 id="攻击对象-v3"><a class="header-anchor" href="#攻击对象-v3">¶</a>攻击对象 :</h3><p>个人计算机、国家机关甚至教育机构</p><h3 id="病毒危害-："><a class="header-anchor" href="#病毒危害-：">¶</a>病毒危害 ：</h3><p>一旦计算机被感染，Flame 可以激活其麦克风和摄像头，监控用户的键盘敲击，从保存的图像中提取地理定位数据，对正在运行的计算机进行屏幕截图，甚至通过蓝牙无线技术发送和接收命令和数据。</p><h3 id="关联病毒-："><a class="header-anchor" href="#关联病毒-：">¶</a>关联病毒 ：</h3><p>震网（Stuxnet)病毒、毒区(DuQu)病毒；“震网”病毒攻击的是伊朗核设施，“毒区”病毒攻击的是伊朗工业控制系统数据，而“火焰”病毒攻击的则是伊朗石油部门的商业情报。</p><h3 id="漏洞利用-：-v3"><a class="header-anchor" href="#漏洞利用-：-v3">¶</a>漏洞利用 ：</h3><p>MS10-046、MS10-061<br><strong>迈克菲绘制的的代码关系图</strong><br><img src="/../pic/flame%E4%BB%A3%E7%A0%81%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg" alt="img"></p><p><strong>FLAME源码中各模块系列的代号及可能的用途</strong><br><img src="/../pic/FLAME%E7%BB%84%E4%BB%B6%E7%94%A8%E9%80%94%E5%9B%BE.png" alt="img"></p><p>工业互联网中不一定需要通过漏洞才能达到恶意目的，有的时候攻击者可以通过系统中的一系列正常操作达到恶意的目的。</p><h2 id="4-IRONGATE"><a class="header-anchor" href="#4-IRONGATE">¶</a>4.IRONGATE</h2><h3 id="事件-v4"><a class="header-anchor" href="#事件-v4">¶</a>事件 :</h3><p>恶意软件IRONGATE中使用了某些Stuxnet功能，只针对西门子公司生产的ICS/SCADA设备。</p><h3 id="攻击对象-v4"><a class="header-anchor" href="#攻击对象-v4">¶</a>攻击对象 :</h3><p>西门子ICS/SCADA系统</p><h3 id="攻击过程-：-v2"><a class="header-anchor" href="#攻击过程-：-v2">¶</a>攻击过程 ：</h3><p>恶意软件IRONGATE首先检测环境，如果没有发现虚拟化的环境则散播病毒程序，然后对目标机器实施中间人攻击以达到恶意操作。IRONGATE使用恶意DLL替换正常DLL，恶意DLL充当PLC与监控系统（SCADA）之间的中间人。恶意DLL记录并替换PLC到用户界面(HMI)的流量，再将构造的恶意数据发回PLC，导致操作过程不受管理员控制。</p><h2 id="5-PLC-Blaster"><a class="header-anchor" href="#5-PLC-Blaster">¶</a>5.PLC-Blaster</h2><h3 id="事件-v5"><a class="header-anchor" href="#事件-v5">¶</a>事件 :</h3><p>PLC-Blaster蠕虫实现了对S7 1200 PLC控制器程序的篡改攻击。</p><h3 id="传播介质-v3"><a class="header-anchor" href="#传播介质-v3">¶</a>传播介质 :</h3><p>TIA门户、移动设备</p><h3 id="攻击对象-v5"><a class="header-anchor" href="#攻击对象-v5">¶</a>攻击对象 :</h3><p>S7 1200 PLC</p><h3 id="攻击过程-：-v3"><a class="header-anchor" href="#攻击过程-：-v3">¶</a>攻击过程 ：</h3><p>PLC-Blaster可能通过U盘等移动设备或者在已感染的主机上扫描可能目标后，蠕虫仿冒TIA门户，并在感染阶段执行西门子专有协议，感染目标主机。感染时，PLC-Blaster将自身代码复制到目标PLC，篡改PLC控制逻辑。目标主机被感染后，PLC-Blaster会再次开始扫描，进行新一轮感染。</p><p>攻击者可以在不修改PLC逻辑指令或者固件的情况下，直接操纵物理过程。</p><h2 id="6-PLC-ROOTKIT"><a class="header-anchor" href="#6-PLC-ROOTKIT">¶</a>6.PLC ROOTKIT</h2><h3 id="事件-v6"><a class="header-anchor" href="#事件-v6">¶</a>事件:</h3><p>研究人员设计出新的恶意软件攻击方式，针对可编程逻辑控制器(PLC)，利用的是微处理器中的架构缺陷，可规避现有检测机制。</p><h3 id="攻击对象-v6"><a class="header-anchor" href="#攻击对象-v6">¶</a>攻击对象 :</h3><p>PLC、专用控制器</p><h3 id="攻击过程-：-v4"><a class="header-anchor" href="#攻击过程-：-v4">¶</a>攻击过程 ：</h3><p>PLC ROOTKIT在PLC操作系统不知道的情形下用恶意代码切换I/O引脚配置，从输出改成输入或反之。并且由于嵌入式设备(如PLC)所用片上系统(SoC)中，并没有用于引脚配置的硬件中断，因而试图向重配置成输入的引脚进行写入操作时，系统将不会收到任何报错。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;终于来啦，杰哥的第二篇博客&lt;/p&gt;
-&lt;h1&gt;LIFE&lt;/h1&gt;
-&lt;p&gt;每天6点起太绝望了，张总给我租了个房子yey&lt;br&gt;
-虽然是老房子但是小区还蛮漂亮的，吃完饭可以去山上散步或者去海边溜达。&lt;/p&gt;</summary>
+&lt;h1&gt;LIFE&lt;/h1&gt;</summary>
     
     
     
     
     <category term="工控事件" scheme="https://115jiege.github.io/tags/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试常用命令--1</title>
+    <link href="https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%862/"/>
+    <id>https://115jiege.github.io/2022/07/26/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%862/</id>
+    <published>2022-07-26T00:23:28.000Z</published>
+    <updated>2022-09-23T06:39:21.801Z</updated>
+    
+    <content type="html"><![CDATA[<h1>WORK</h1><p>记录一下测试时常用的命令</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;WORK&lt;/h1&gt;
+&lt;p&gt;记录一下测试时常用的命令&lt;/p&gt;
+</summary>
+      
+    
+    
+    
     
   </entry>
   
