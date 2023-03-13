@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>工控安全事件整理 | Jiege</title><meta name="keywords" content="工控事件"><meta name="author" content="Jiege"><meta name="copyright" content="Jiege"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="终于来啦，杰哥的第二篇博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工控安全事件整理">
+<meta property="og:url" content="https://115jiege.github.io/2022/07/26/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Jiege">
+<meta property="og:description" content="终于来啦，杰哥的第二篇博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg">
+<meta property="article:published_time" content="2022-07-26T00:23:28.000Z">
+<meta property="article:modified_time" content="2023-03-13T03:21:21.943Z">
+<meta property="article:author" content="Jiege">
+<meta property="article:tag" content="工控事件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://115jiege.github.io/2022/07/26/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Jiege","link":"链接: ","source":"来源: Jiege","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-03-13 11:21:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Jiege" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/cover_p.jpeg'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jiege</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">工控安全事件整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-26T00:23:28.000Z" title="发表于 2022-07-26 08:23:28">2022-07-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-13T03:21:21.943Z" title="更新于 2023-03-13 11:21:21">2023-03-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="工控安全事件整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>终于来啦，杰哥的第二篇博客</p>
+<span id="more"></span>
+<h1>WORK</h1>
+<p>整理一下目前收集的典型工控安全事件</p>
+<h2 id="1-震网事件"><a class="header-anchor" href="#1-震网事件">¶</a>1.震网事件</h2>
+<h3 id="事件"><a class="header-anchor" href="#事件">¶</a>事件 :</h3>
+<p>2010年9月24日，伊朗核设施爆出Stuxnet病毒（“震网病毒”）攻击，导致其核设施不能正常运行。</p>
+<h3 id="传播介质"><a class="header-anchor" href="#传播介质">¶</a>传播介质 :</h3>
+<p>u盘</p>
+<h3 id="攻击对象"><a class="header-anchor" href="#攻击对象">¶</a>攻击对象 :</h3>
+<p>国家重要基础设施</p>
+<h3 id="漏洞利用-："><a class="header-anchor" href="#漏洞利用-：">¶</a>漏洞利用 ：</h3>
+<p>MS10-046、MS10-061、MS08-067、MS10-073、MS10-092<br>
+Stuxnet首先是感染外部主机，然后感染u盘，利用Link文件漏洞（MS10-046）传播到内网。<br>
+在内网中，通过快捷方式文件解析漏洞、RPC远程执行漏洞（MS08-067)、打印机后台程序服务漏洞（MS10-061），实现联网主机的传播（横向渗透），到达装有WIN CC的工作站。<br>
+当被感染的工作站连接到PLC，Stuxnet部署恶意代码，向PLC发送特定指令。<br>
+MS10-073、MS10-092用于提权。</p>
+<h3 id="攻击过程-："><a class="header-anchor" href="#攻击过程-：">¶</a>攻击过程 ：</h3>
+<p>Stuxnet蠕虫利用多个零日漏洞和U盘等移动设备在工业互联网中传播，最终目的是到达WIN CC主机。攻击者利用WIN CC存在的硬编码漏洞，窃取数据库信息，保存密码；利用项目文件加载DLL文件出错，窃取正常的生产数据。通过对得到的生产数据进行深入分析，可以构造恶意DLL文件，然后攻击者操纵固件替换恶意DLL，实现恶意操作。震网事件中，攻击者修改了数据库中的PID算法相关参数，导致离心机转速发生变化。为了防止安全操作员得到警报以及系统做出响应，攻击者可能采用重放攻击重放抓取的正常流量；或者修改报警设置，例如将内存代码修改为固定值或篡改汇编级指令代码。</p>
+<h2 id="2-乌克兰电网事件"><a class="header-anchor" href="#2-乌克兰电网事件">¶</a>2.乌克兰电网事件</h2>
+<h3 id="事件-v2"><a class="header-anchor" href="#事件-v2">¶</a>事件 :</h3>
+<p>2015年12月23日，乌克兰电网遭遇突发停电事故。本次停电事故由7个变电站开关动作引起，导致80000个用户停电，停电时间为3到6小时不等。这次停电不是因为电力短缺，而是遭到了黑客攻击。</p>
+<h3 id="传播介质-v2"><a class="header-anchor" href="#传播介质-v2">¶</a>传播介质 :</h3>
+<p>恶意组件BlackEnergy（该恶意软件最早可追溯到2007年，由俄罗斯地下黑客组织开发并广泛使用，包括用来“刺探”全球各国的电力公司。）</p>
+<h3 id="攻击对象-v2"><a class="header-anchor" href="#攻击对象-v2">¶</a>攻击对象 :</h3>
+<p>乌克兰电力公司</p>
+<h3 id="漏洞利用-：-v2"><a class="header-anchor" href="#漏洞利用-：-v2">¶</a>漏洞利用 ：</h3>
+<p>CVE-2014-4114(OLE包管理INF 任意代码执行漏洞)<br>
+<strong>安天工作室分析的攻击流程</strong><br>
+Office类型的漏洞利用(CVE-2014-4114)–&gt;邮件–&gt;下载恶意组件BlackEnergy侵入员工电力办公系统–&gt;BlackEnergy继续下载恶意组件(KillDisk)–&gt;擦除电脑数据破坏HMI软件监视管理系统<br>
+<img src="/../pic/blackenergy%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B.jpg" alt="img"></p>
+<h2 id="3-FLAME侵袭中东地区事件"><a class="header-anchor" href="#3-FLAME侵袭中东地区事件">¶</a>3.FLAME侵袭中东地区事件</h2>
+<p>Flame ( Worm.Win32.Flame ，又称 Flamer 或 sKyWlper 、Skywiper 等），中文名“火焰病毒”、“超级火焰病毒”。Flame 被包括世界电信联盟等官方以及卡巴斯基等国际权威厂商认定为迄今为止最复杂、最危险、最致命的病毒威胁。</p>
+<h3 id="事件-v3"><a class="header-anchor" href="#事件-v3">¶</a>事件:</h3>
+<p>2012年5月，俄罗斯安全专家发现一种威力强大的电脑病毒火焰(Flame)在中东地区大范围传播。卡巴斯基称，Flame实际上是一个间谍工具包。至少过去两年中，Flame病毒已感染了伊朗、黎巴嫩、叙利亚、苏丹以及其他中东和北非国家的相应目标计算机系统。</p>
+<h3 id="传播"><a class="header-anchor" href="#传播">¶</a>传播 :</h3>
+<p>该病毒可以通过USB存储器以及网络复制和传播，并能接受来自世界各地多个服务器的指令。</p>
+<h3 id="攻击对象-v3"><a class="header-anchor" href="#攻击对象-v3">¶</a>攻击对象 :</h3>
+<p>个人计算机、国家机关甚至教育机构</p>
+<h3 id="病毒危害-："><a class="header-anchor" href="#病毒危害-：">¶</a>病毒危害 ：</h3>
+<p>一旦计算机被感染，Flame 可以激活其麦克风和摄像头，监控用户的键盘敲击，从保存的图像中提取地理定位数据，对正在运行的计算机进行屏幕截图，甚至通过蓝牙无线技术发送和接收命令和数据。</p>
+<h3 id="关联病毒-："><a class="header-anchor" href="#关联病毒-：">¶</a>关联病毒 ：</h3>
+<p>震网（Stuxnet)病毒、毒区(DuQu)病毒；“震网”病毒攻击的是伊朗核设施，“毒区”病毒攻击的是伊朗工业控制系统数据，而“火焰”病毒攻击的则是伊朗石油部门的商业情报。</p>
+<h3 id="漏洞利用-：-v3"><a class="header-anchor" href="#漏洞利用-：-v3">¶</a>漏洞利用 ：</h3>
+<p>MS10-046、MS10-061<br>
+<strong>迈克菲绘制的的代码关系图</strong><br>
+<img src="/../pic/flame%E4%BB%A3%E7%A0%81%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg" alt="img"></p>
+<p><strong>FLAME源码中各模块系列的代号及可能的用途</strong><br>
+<img src="/../pic/FLAME%E7%BB%84%E4%BB%B6%E7%94%A8%E9%80%94%E5%9B%BE.png" alt="img"></p>
+<p>工业互联网中不一定需要通过漏洞才能达到恶意目的，有的时候攻击者可以通过系统中的一系列正常操作达到恶意的目的。</p>
+<h2 id="4-IRONGATE"><a class="header-anchor" href="#4-IRONGATE">¶</a>4.IRONGATE</h2>
+<h3 id="事件-v4"><a class="header-anchor" href="#事件-v4">¶</a>事件 :</h3>
+<p>恶意软件IRONGATE中使用了某些Stuxnet功能，只针对西门子公司生产的ICS/SCADA设备。</p>
+<h3 id="攻击对象-v4"><a class="header-anchor" href="#攻击对象-v4">¶</a>攻击对象 :</h3>
+<p>西门子ICS/SCADA系统</p>
+<h3 id="攻击过程-：-v2"><a class="header-anchor" href="#攻击过程-：-v2">¶</a>攻击过程 ：</h3>
+<p>恶意软件IRONGATE首先检测环境，如果没有发现虚拟化的环境则散播病毒程序，然后对目标机器实施中间人攻击以达到恶意操作。IRONGATE使用恶意DLL替换正常DLL，恶意DLL充当PLC与监控系统（SCADA）之间的中间人。恶意DLL记录并替换PLC到用户界面(HMI)的流量，再将构造的恶意数据发回PLC，导致操作过程不受管理员控制。</p>
+<h2 id="5-PLC-Blaster"><a class="header-anchor" href="#5-PLC-Blaster">¶</a>5.PLC-Blaster</h2>
+<h3 id="事件-v5"><a class="header-anchor" href="#事件-v5">¶</a>事件 :</h3>
+<p>PLC-Blaster蠕虫实现了对S7 1200 PLC控制器程序的篡改攻击。</p>
+<h3 id="传播介质-v3"><a class="header-anchor" href="#传播介质-v3">¶</a>传播介质 :</h3>
+<p>TIA门户、移动设备</p>
+<h3 id="攻击对象-v5"><a class="header-anchor" href="#攻击对象-v5">¶</a>攻击对象 :</h3>
+<p>S7 1200 PLC</p>
+<h3 id="攻击过程-：-v3"><a class="header-anchor" href="#攻击过程-：-v3">¶</a>攻击过程 ：</h3>
+<p>PLC-Blaster可能通过U盘等移动设备或者在已感染的主机上扫描可能目标后，蠕虫仿冒TIA门户，并在感染阶段执行西门子专有协议，感染目标主机。感染时，PLC-Blaster将自身代码复制到目标PLC，篡改PLC控制逻辑。目标主机被感染后，PLC-Blaster会再次开始扫描，进行新一轮感染。</p>
+<p>攻击者可以在不修改PLC逻辑指令或者固件的情况下，直接操纵物理过程。</p>
+<h2 id="6-PLC-ROOTKIT"><a class="header-anchor" href="#6-PLC-ROOTKIT">¶</a>6.PLC ROOTKIT</h2>
+<h3 id="事件-v6"><a class="header-anchor" href="#事件-v6">¶</a>事件:</h3>
+<p>研究人员设计出新的恶意软件攻击方式，针对可编程逻辑控制器(PLC)，利用的是微处理器中的架构缺陷，可规避现有检测机制。</p>
+<h3 id="攻击对象-v6"><a class="header-anchor" href="#攻击对象-v6">¶</a>攻击对象 :</h3>
+<p>PLC、专用控制器</p>
+<h3 id="攻击过程-：-v4"><a class="header-anchor" href="#攻击过程-：-v4">¶</a>攻击过程 ：</h3>
+<p>PLC ROOTKIT在PLC操作系统不知道的情形下用恶意代码切换I/O引脚配置，从输出改成输入或反之。并且由于嵌入式设备(如PLC)所用片上系统(SoC)中，并没有用于引脚配置的硬件中断，因而试图向重配置成输入的引脚进行写入操作时，系统将不会收到任何报错。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Jiege</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://115jiege.github.io/2022/07/26/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%86/">https://115jiege.github.io/2022/07/26/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/%E5%B7%A5%E6%8E%A7%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6%E6%95%B4%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://115jiege.github.io" target="_blank">Jiege</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B7%A5%E6%8E%A7%E4%BA%8B%E4%BB%B6/">工控事件</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/21/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/Modbus%20DOS%E6%94%BB%E5%87%BB/"><img class="prev-cover" src="https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg" onerror="onerror=null;src='/img/cover_p.jpeg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">针对一种新型Modbus Dos攻击的讨论</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/26/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/%E6%B5%8B%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><img class="next-cover" src="https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg" onerror="onerror=null;src='/img/cover_p.jpeg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">测试常用命令--1</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="avatar"/><div class="author-info__name">Jiege</div><div class="author-info__description">美丽杰哥的个人博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/115Jiege"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/115Jiege" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Jiege's blog~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">WORK</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%9C%87%E7%BD%91%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">1.震网事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.1.</span> <span class="toc-text">事件 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E4%BB%8B%E8%B4%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">传播介质 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.3.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8-%EF%BC%9A"><span class="toc-number">1.1.4.</span> <span class="toc-text">漏洞利用 ：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E8%BF%87%E7%A8%8B-%EF%BC%9A"><span class="toc-number">1.1.5.</span> <span class="toc-text">攻击过程 ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B9%8C%E5%85%8B%E5%85%B0%E7%94%B5%E7%BD%91%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">2.乌克兰电网事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-v2"><span class="toc-number">1.2.1.</span> <span class="toc-text">事件 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E4%BB%8B%E8%B4%A8-v2"><span class="toc-number">1.2.2.</span> <span class="toc-text">传播介质 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1-v2"><span class="toc-number">1.2.3.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8-%EF%BC%9A-v2"><span class="toc-number">1.2.4.</span> <span class="toc-text">漏洞利用 ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-FLAME%E4%BE%B5%E8%A2%AD%E4%B8%AD%E4%B8%9C%E5%9C%B0%E5%8C%BA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">3.FLAME侵袭中东地区事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-v3"><span class="toc-number">1.3.1.</span> <span class="toc-text">事件:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD"><span class="toc-number">1.3.2.</span> <span class="toc-text">传播 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1-v3"><span class="toc-number">1.3.3.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E5%8D%B1%E5%AE%B3-%EF%BC%9A"><span class="toc-number">1.3.4.</span> <span class="toc-text">病毒危害 ：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E7%97%85%E6%AF%92-%EF%BC%9A"><span class="toc-number">1.3.5.</span> <span class="toc-text">关联病毒 ：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8-%EF%BC%9A-v3"><span class="toc-number">1.3.6.</span> <span class="toc-text">漏洞利用 ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-IRONGATE"><span class="toc-number">1.4.</span> <span class="toc-text">4.IRONGATE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-v4"><span class="toc-number">1.4.1.</span> <span class="toc-text">事件 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1-v4"><span class="toc-number">1.4.2.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E8%BF%87%E7%A8%8B-%EF%BC%9A-v2"><span class="toc-number">1.4.3.</span> <span class="toc-text">攻击过程 ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-PLC-Blaster"><span class="toc-number">1.5.</span> <span class="toc-text">5.PLC-Blaster</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-v5"><span class="toc-number">1.5.1.</span> <span class="toc-text">事件 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E4%BB%8B%E8%B4%A8-v3"><span class="toc-number">1.5.2.</span> <span class="toc-text">传播介质 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1-v5"><span class="toc-number">1.5.3.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E8%BF%87%E7%A8%8B-%EF%BC%9A-v3"><span class="toc-number">1.5.4.</span> <span class="toc-text">攻击过程 ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-PLC-ROOTKIT"><span class="toc-number">1.6.</span> <span class="toc-text">6.PLC ROOTKIT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-v6"><span class="toc-number">1.6.1.</span> <span class="toc-text">事件:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%AF%B9%E8%B1%A1-v6"><span class="toc-number">1.6.2.</span> <span class="toc-text">攻击对象 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E8%BF%87%E7%A8%8B-%EF%BC%9A-v4"><span class="toc-number">1.6.3.</span> <span class="toc-text">攻击过程 ：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91--%E5%AE%9E%E6%88%981/" title="qt开发--实战1"><img src="https://cdn.pixabay.com/photo/2017/05/11/11/15/workplace-2303851_960_720.jpg" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="qt开发--实战1"/></a><div class="content"><a class="title" href="/2023/03/13/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91--%E5%AE%9E%E6%88%981/" title="qt开发--实战1">qt开发--实战1</a><time datetime="2023-03-13T03:03:05.000Z" title="发表于 2023-03-13 11:03:05">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/07/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-4/" title="qt开发-4"><img src="https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="qt开发-4"/></a><div class="content"><a class="title" href="/2023/03/07/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-4/" title="qt开发-4">qt开发-4</a><time datetime="2023-03-07T00:53:53.000Z" title="发表于 2023-03-07 08:53:53">2023-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/06/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-3/" title="qt开发-3"><img src="https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="qt开发-3"/></a><div class="content"><a class="title" href="/2023/03/06/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-3/" title="qt开发-3">qt开发-3</a><time datetime="2023-03-06T01:20:24.000Z" title="发表于 2023-03-06 09:20:24">2023-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/03/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-2/" title="qt开发-2"><img src="https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="qt开发-2"/></a><div class="content"><a class="title" href="/2023/03/03/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-2/" title="qt开发-2">qt开发-2</a><time datetime="2023-03-03T05:23:55.000Z" title="发表于 2023-03-03 13:23:55">2023-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/01/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-1/" title="qt开发-1"><img src="https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png" onerror="this.onerror=null;this.src='/img/cover_p.jpeg'" alt="qt开发-1"/></a><div class="content"><a class="title" href="/2023/03/01/%E7%A0%94%E5%8F%91/qt%E5%BC%80%E5%8F%91/qt%E5%BC%80%E5%8F%91-1/" title="qt开发-1">qt开发-1</a><time datetime="2023-03-01T07:05:40.000Z" title="发表于 2023-03-01 15:05:40">2023-03-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Jiege</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-10},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body></html>
