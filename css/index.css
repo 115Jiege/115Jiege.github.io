@@ -3236,6 +3236,40 @@ blockquote footer cite:before {
 #post-comment .comment-wrap > div:nth-child(2) {
   display: none;
 }
+#footer {
+  position: relative;
+  background: #49b1f5;
+  background-attachment: local;
+  background-position: bottom;
+  background-size: cover;
+}
+#footer background:rgba(243,
+#footer 112,
+#footer 85,
+#footer 0.7) {
+  content: '';
+}
+#footer-wrap {
+  position: relative;
+  padding: 2rem 1rem;
+  color: var(--light-grey);
+  text-align: center;
+}
+#footer-wrap a {
+  color: var(--light-grey);
+}
+#footer-wrap a:hover {
+  text-decoration: underline;
+}
+#footer-wrap .footer-separator {
+  margin: 0 0.2rem;
+}
+#footer-wrap .icp-icon {
+  padding: 0 4px;
+  vertical-align: text-bottom;
+  max-height: 1.4em;
+  width: auto;
+}
 #page-header {
   position: relative;
   width: 100%;

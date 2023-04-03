@@ -47,17 +47,15 @@
     <link href="https://115jiege.github.io/2023/03/30/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/android%E4%BB%8E0%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
     <id>https://115jiege.github.io/2023/03/30/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/android%E4%BB%8E0%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
     <published>2023-03-30T09:15:38.000Z</published>
-    <updated>2023-03-31T08:27:41.700Z</updated>
+    <updated>2023-04-03T02:39:48.852Z</updated>
     
-    <content type="html"><![CDATA[<p>Android开发第二弹来啦~~<br><strong>notes:标量值花括号警告</strong><br>有个奇怪的地方要记录一下，我的c++源文件中使用了aotumic原子类型，于是调用了&lt;aotumic.h&gt;头文件并使用了其中定义的宏<br>#define ATOMIC_FLAG_INIT {false}<br>#define ATOMIC_VAR_INIT(__v) {__v}</p><p>看起来是不是没有任何问题，但是实际上编译的时候系统发出了警告，警告如下:<br>warning:braces around scalar initializer [-Wbraced-scalar-init]<br>查阅资料发现：</p><blockquote><p>在C语言中，在初始化标量值时使用额外的大括号是完全合法的，如int x = { 5 };GCC会为此类代码生成警告。<br>它认为您可能写了一些您不想写的东西，因为花括号大部分时间用于启动聚合的多部分初始化程序，而不是用于标量的独立初始化程序。</p></blockquote><blockquote><p>这是一个标量初始化程序：int foo = 3;<br>这是一个带括号的标量初始化程序：int foo = {3};<br>这是数组的初始化器，不是标量：int foo[] = {1, 2, 3};<br>警告说明您的结构具有标量初始值设定项，并带有大括号</p></blockquote><p>所以gcc的编译器检查的时候其实会更严格╮(╯▽╰)╭</p><p>虽然C<ins>源代码已经引用进去了并且编译过啦，但是怎么让jni调用C</ins>的函数并且确认接口被调用了呢，这就需要用到活动;</p>]]></content>
+    <content type="html"><![CDATA[<p>Android开发第二弹来啦~~</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Android开发第二弹来啦~~&lt;br&gt;
-&lt;strong&gt;notes:标量值花括号警告&lt;/strong&gt;&lt;br&gt;
-有个奇怪的地方要记录一下，我的c++源文件中使用了aotumic原子类型，于是调用了&amp;lt;aotumic.h&amp;gt;头文件并使用了其中定义的宏&lt;br&gt;
-#de</summary>
+    <summary type="html">&lt;p&gt;Android开发第二弹来啦~~&lt;/p&gt;
+</summary>
       
     
     
