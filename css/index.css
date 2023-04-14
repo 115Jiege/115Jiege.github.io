@@ -1308,9 +1308,9 @@ canvas:not(#ribbon-canvas),
   --tab-button-active-bg: #fff;
   --card-bg: #fff;
   --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #ff7242;
+  --btn-hover-color: #8a89a3;
   --btn-color: #fff;
-  --btn-bg: #49b1f5;
+  --btn-bg: #9b9ab8;
   --text-bg-hover: #49b1f5;
   --light-grey: #eee;
   --white: #fff;
@@ -1451,7 +1451,7 @@ a {
   overflow-wrap: break-word;
 }
 a:hover {
-  color: #49b1f5;
+  color: #fff;
 }
 #site-title,
 #site-subtitle,
@@ -1491,7 +1491,7 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: var(--btn-hover-color);
+  background: #8a89a3;
   content: '';
   -webkit-transition: -webkit-transform 0.5s ease-out;
   -moz-transition: -moz-transform 0.5s ease-out;
@@ -2310,16 +2310,16 @@ blockquote footer cite:before {
 }
 :root {
   --recent-post-bgcolor: rgba(255,255,255,0.9);
-  --article-content-bgcolor: rgba(224,215,245,0.8);
+  --article-content-bgcolor: rgba(196,194,231,0.8);
   --recent-post-arrow: #fff;
   --recent-post-cover-shadow: #fff;
   --recent-post-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
 }
 [data-theme="dark"] {
-  --recent-post-bgcolor: rgba(35,35,35,0.5);
-  --article-content-bgcolor: #99999a;
-  --recent-post-arrow: #37e2dd;
-  --recent-post-cover-shadow: #232323;
+  --recent-post-bgcolor: #d6d5e6;
+  --article-content-bgcolor: #666585;
+  --recent-post-arrow: #d6d6d6;
+  --recent-post-cover-shadow: rgba(85,84,111,0.6);
 }
 .recent-posts {
   padding: 0 15px 0 15px;
@@ -2418,7 +2418,7 @@ blockquote footer cite:before {
   overflow: hidden;
 }
 .recent-posts .recent-post-item .recent-post-content .recent-post-info .article-title .article-title-link:hover {
-  color: #49b1f5;
+  color: #dfdbe1;
 }
 .recent-posts .recent-post-item .recent-post-content .recent-post-info .recent-post-meta {
   height: 50%;
@@ -2464,7 +2464,7 @@ blockquote footer cite:before {
   color: #969797;
 }
 .recent-posts .recent-post-item .recent-post-content .recent-post-info .recent-post-meta .article-meta-wrap a:hover {
-  color: #49b1f5;
+  color: #dfdbe1;
 }
 .recent-posts .recent-post-item .recent-post-content .article-content {
   display: -webkit-box;
@@ -2500,7 +2500,6 @@ blockquote footer cite:before {
   text-overflow: ellipsis;
   overflow: hidden;
   color: #fff;
-  text-shadow: 1px 2px 3px #000;
 }
 .recent-posts .recent-post-item .recent-post-content .article-content .article-content-text::before {
   content: "❝";
