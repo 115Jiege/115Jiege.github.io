@@ -6,7 +6,7 @@
   <link href="https://115jiege.github.io/atom.xml" rel="self"/>
   
   <link href="https://115jiege.github.io/"/>
-  <updated>2023-04-18T05:29:06.696Z</updated>
+  <updated>2023-04-18T05:38:38.559Z</updated>
   <id>https://115jiege.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用Android模拟器.md</title>
-    <link href="https://115jiege.github.io/2023/04/18/%E4%BD%BF%E7%94%A8Android%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
-    <id>https://115jiege.github.io/2023/04/18/%E4%BD%BF%E7%94%A8Android%E6%A8%A1%E6%8B%9F%E5%99%A8/</id>
+    <title>使用Android模拟器</title>
+    <link href="https://115jiege.github.io/2023/04/18/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8Android%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
+    <id>https://115jiege.github.io/2023/04/18/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8Android%E6%A8%A1%E6%8B%9F%E5%99%A8/</id>
     <published>2023-04-18T03:13:28.000Z</published>
-    <updated>2023-04-18T05:29:06.696Z</updated>
+    <updated>2023-04-18T05:38:38.559Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装Android模拟器"><a class="header-anchor" href="#安装Android模拟器">¶</a>安装Android模拟器</h2><p>Android模拟器这步真的太痛苦了ε=( o｀ω′)ノ<br>搞了好多办法最后搞得Android studio总是闪退，解决办法：重装软件啦╮(╯▽╰)╭</p><h3 id="AndroidStudio自带的安卓模拟器"><a class="header-anchor" href="#AndroidStudio自带的安卓模拟器">¶</a>AndroidStudio自带的安卓模拟器</h3><p>在虚拟机里安装Android Studio，使用它自带的安卓模拟器;</p><p>打开Android Studio，第一次打开会进行一些基础设置和安装sdk，默认就好；<br>新建工程，打开tools-&gt;sdk manager;安装Android Emulator(最新版),Android SDK plantform-tools,ndk(自定义奥);</p><p>打开Device Manager，create virtual device:<br>1)choose a device definition — Nexus 5X;</p><p>2)select a system image — Nougat(api:24,ABI:X86)<br>可以自主选择需要的不同api等级和ABI的镜像，但是需要注意:<br><strong>①系统缺少/不支持VT-x/AMD-V;</strong><br>解决：关闭虚拟机，打开设置-系统-处理器-勾选启用嵌套VT-x/AMD-V;</p><p>如果无法启用，选项为灰色，则使用VBoxManage以命令行的方式进行开启,操作步骤如下:<br>物理机管理员身份打开cmd，cd到virtualbox安装目录;<br>VBoxManage.exe list vms   #列出虚拟机名字<br>.\vboxmanage.exe modifyvm hostname --nested-hw-virt on  #打开hostname的嵌套VT-x/AMD-V功能</p><p><strong>②选择api level</strong><br>新建项目工程时选择的api等级是工程支持的最低SDK版本，所以选择镜像的api等级应该不小于这个等级;</p><p>如果想要修改min-api，可以打开工程结构File-&gt;Project Structure(or快捷键Ctrl+Alt+Shift+S)，修改Default Config-&gt;Min SDK version;</p><p><strong>③选择ABI</strong><br>科普：<br>ABI (Application Binray interface):应用程序二进制接口，描述了应用程序和操作系统之间，一个应用和它的库之间，或应用的组成部分之间的底层接口。<br>早期的Android系统几乎只支持ARMv5的CPU架构，后面发展到支持七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。<br>应用程序二进制接口（Application Binary Interface）定义了二进制文件（尤其是.so文件）如何运行在相应的系统平台上，从使用的指令集，内存对齐到可用的系统函数库。<br>在Android 系统上，每一个CPU架构对应一个ABI：armeabi，armeabi-v7a，x86，mips，arm64- v8a，mips64，x86_64。<br>AndroidStudio自带的模拟器中只有常用的四种：armeabi-v7a，x86，arm64- v8a，x86_64;可以按需选择。</p><p>但是最好是对应系统的CPU架构，建议先查看系统cpu架构(unix系统使用命令&quot;uname -a&quot;查看)，然后选择对应的CPU架构;<br>比如我的ubuntu2204的CPU架构是X86_64，所以就可以选择X86和X86_64位的;<br>尝试使用armeabi-v7a的镜像，结果启动后一直卡在开机页面(Windows试过也是这样，可能是不兼容);</p><p>不过这些虚拟设备动辄四五个G，还有八九个G的，运行起来也很卡，最关键的是，连接不上！！！！<br>经过一番努力后，选择放弃，改用别的安卓模拟器。</p><h3 id="genymotion"><a class="header-anchor" href="#genymotion">¶</a>genymotion</h3><p>寻找资料发现ubuntu等linux系统可用安卓模拟器很多，不仅安装方便，运行也不会很卡;<br>这里我是用的是genymotion，原因是好看。</p><h4 id="安装VirtualBox"><a class="header-anchor" href="#安装VirtualBox">¶</a>安装VirtualBox</h4><p>genymotion依赖于VirtualBox，所以不仅物理机的Virtualbox要开启VT-x/AMD-V扩展功能，还要在虚拟机内安装virtualbox;</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install virtualbox</span><br></pre></td></tr></table></figure><h4 id="安装genymotion"><a class="header-anchor" href="#安装genymotion">¶</a>安装genymotion</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.genymotion.com/releases/genymotion-3.1.2/genymotion-3.1.2-linux_x64.bin</span><br><span class="line">sudo ./genymotion-3.1.2-linux_x64.bin</span><br></pre></td></tr></table></figure><p><em>默认安装目录：/opt/genymobile/genymotion</em></p><h4 id="添加快捷方式"><a class="header-anchor" href="#添加快捷方式">¶</a>添加快捷方式</h4><p>打开终端，命令行输入以下内容:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br><span class="line"><span class="built_in">ln</span> -s /opt/genymobile/genymotion/genymotion /usr/bin/genymotion</span><br><span class="line"><span class="built_in">ln</span> -s /opt/genymobile/genymotion/icons/genymotion-logo.png /usr/local/share/genymotion-logo.png</span><br><span class="line"><span class="built_in">cd</span> /usr/share/applications </span><br><span class="line">sudo vim ./genymotion.desktop</span><br></pre></td></tr></table></figure><p>新建桌面文件，添加以下内容:</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Desktop Entry]</span><br><span class="line"></span><br><span class="line"><span class="attribute">Name</span> <span class="operator">=</span> genymotion</span><br><span class="line"></span><br><span class="line"><span class="attribute">Exec</span> <span class="operator">=/</span>usr/bin/genymotion</span><br><span class="line"></span><br><span class="line"><span class="attribute">Icon</span> <span class="operator">=/</span>usr/local/share/genymotion-logo.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">Comment</span> <span class="operator">=</span> genymotion</span><br><span class="line"></span><br><span class="line"><span class="attribute">Type</span> <span class="operator">=</span> Application   </span><br></pre></td></tr></table></figure><h4 id="注册"><a class="header-anchor" href="#注册">¶</a>注册</h4><p>因为genymotion需要账号登陆，因此我们需要去官网创建账号，因此才可以登陆软件；<br><a href="https://www.genymotion.com/account/create/">创建账号</a><br>创建好账号之后，回到genymotion软件，输入帐号密码，点击next，选择Personal Use，继续next即可使用个人版;</p><h4 id="AndroidStudio插件"><a class="header-anchor" href="#AndroidStudio插件">¶</a>AndroidStudio插件</h4><p>打开AndroidStudio，找到setting-plugins，搜索genymotion，安装插件并重启Android Studio;<br>点击Genymotion插件图标，打开插件;<br>(没有UI工具栏的，需要依次点击 View =&gt; Appearance =&gt; Toolbar 即可找到)<br>打开setting-tools-genymotion plugin，填入Genymotion安装路径;</p>]]></content>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>Virtualbox搭建虚拟机</title>
-    <link href="https://115jiege.github.io/2023/04/18/Virtualbox%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    <id>https://115jiege.github.io/2023/04/18/Virtualbox%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
+    <link href="https://115jiege.github.io/2023/04/18/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/Virtualbox%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>https://115jiege.github.io/2023/04/18/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/Virtualbox%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
     <published>2023-04-18T03:06:48.000Z</published>
     <updated>2023-04-18T05:28:35.000Z</updated>
     
@@ -64,32 +64,6 @@
     
     
     <category term="virtualbox" scheme="https://115jiege.github.io/tags/virtualbox/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gmssl_android编译</title>
-    <link href="https://115jiege.github.io/2023/04/17/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/gmssl_android%E7%BC%96%E8%AF%91/"/>
-    <id>https://115jiege.github.io/2023/04/17/%E7%A0%94%E5%8F%91/android%E5%BC%80%E5%8F%91/gmssl_android%E7%BC%96%E8%AF%91/</id>
-    <published>2023-04-17T00:17:58.000Z</published>
-    <updated>2023-04-17T07:30:59.485Z</updated>
-    
-    <content type="html"><![CDATA[<p>说来就来，国密gmssl的Android版编译;</p><h3 id="编译环境"><a class="header-anchor" href="#编译环境">¶</a>编译环境</h3><p>os: mint 20.1(5.4.0-58-generic #64-Ubuntu SMP Wed Dec 9 08:16:25 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux)<br>NDK: android-r14b<br>Android-abi: android-19</p><h3 id="初步准备"><a class="header-anchor" href="#初步准备">¶</a>初步准备</h3><p>android-ndk-r14b，可以在<a href="https://www.androiddevtools.cn/">此处</a>下载合适版本;<br>下载<a href="https://github.com/rjmangubat23/OpenSSL.git">openssl for android</a><br>配置环境变量</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><p>./config shared no-ssl2 no-ssl3 no-comp no-hw no-sdf no-skf  no-zuc --openssldir=/usr/local/ssl/android-19 --prefix=/usr/local/ssl/android-19<br>SKF/SDF/SAF/SOF来自于标准中接口函数的前缀，</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;说来就来，国密gmssl的Android版编译;&lt;/p&gt;
-&lt;h3 id=&quot;编译环境&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#编译环境&quot;&gt;¶&lt;/a&gt;编译环境&lt;/h3&gt;
-&lt;p&gt;os: mint 20.1(5.4.0-58-generic #64-Ubu</summary>
-      
-    
-    
-    
-    <category term="研发" scheme="https://115jiege.github.io/categories/%E7%A0%94%E5%8F%91/"/>
-    
-    
-    <category term="android开发" scheme="https://115jiege.github.io/tags/android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
