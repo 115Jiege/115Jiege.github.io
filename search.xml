@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title> Linux捕获程序崩溃异常——qbreakpad</title>
+      <link href="/2023/05/08/%20Linux%E6%8D%95%E8%8E%B7%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83%E5%BC%82%E5%B8%B8/"/>
+      <url>/2023/05/08/%20Linux%E6%8D%95%E8%8E%B7%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83%E5%BC%82%E5%B8%B8/</url>
+      
+        <content type="html"><![CDATA[<p>在进行Linux平台的qt程序开发时，出现程序崩溃退出的情况，而且没有什么信息(ˉ▽ˉ；)…。</p><p>bing了一下发现一个可以定位崩溃位置的工具qbreakpad，这里记录一下qbreakpad的安装过程。</p><h1>qbreakpad的安装过程</h1><h2 id="源码准备"><a class="header-anchor" href="#源码准备">¶</a>源码准备</h2><h3 id="下载Breakpad源码"><a class="header-anchor" href="#下载Breakpad源码">¶</a>下载Breakpad源码</h3><p><a href="https://github.com/google/breakpad">下载地址</a></p><p>建议选择tags=<strong>v2021.08.09</strong></p><h3 id="下载LSS源码"><a class="header-anchor" href="#下载LSS源码">¶</a>下载LSS源码</h3><p><a href="https://github.com/ithaibo/linux-syscall-support">下载地址</a> 需要注意，如果您的gcc版本高于9.0，在构建breakpad时可能会报错：</p><p><code>linux\_syscall\_support.h: error: listing the stack pointer register 'rsp' in a clobber list is deprecated</code></p><p>解决：更换修正版lss</p><p><a href="https://chromium.googlesource.com/linux-syscall-support/+/8048ece6c16c91acfe0d36d1d3cc0890ab6e945c">下载地址</a></p><h3 id="下载qBreakpad源码"><a class="header-anchor" href="#下载qBreakpad源码">¶</a>下载qBreakpad源码</h3><p><a href="https://github.com/buzzySmile/qBreakpad">下载地址</a></p><h2 id="编译qBreakpad"><a class="header-anchor" href="#编译qBreakpad">¶</a>编译qBreakpad</h2><p>下载qBreakpad源码，在<code>qBreakpad/third_party</code>目录下，把下载好的LSS源码和Breakpad源码放入其中；修改文件夹名为lss和breakpad;</p><p><a href="http://xn--qtcreatorqBreakpad-ci98aj42blj7g.pro">用qtcreator打开qBreakpad.pro</a>，直接构建；</p><p>构建成功后，会在<code>qBreakpad/handler</code> 目录下生成<code>libqBreakpad.a</code>文件，保存目录下的头文件<code>QBreakpadHandler.h、QBreakpadHttpUploader.h、singletone/call_once.h、singletone/singleton.h</code>。</p><h2 id="调用qBreakpad"><a class="header-anchor" href="#调用qBreakpad">¶</a>调用qBreakpad</h2><p>在自己的qt工程(qbreakpadTest)下新建qBreakpad目录，将<code>libqBreakpad.a</code>拷贝至，<code>qBreakpad\lib\</code>目录下；</p><p>将调用库所需的头文件<code>QBreakpadHandler.h、QBreakpadHttpUploader.h、call_once.h、singleton.h</code>共4个文件拷贝至<code>qBreakpad\include</code>下。</p><p>在qbreakTest.pro下增加以下内容：</p><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">############ for qBreakpad ############</span></span><br><span class="line"><span class="comment"># qBreakpad中需要使用到network模块</span></span><br><span class="line"><span class="attr">QT</span> <span class="string">+= network</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># 启用多线程、异常、RTTI、STL支持</span></span><br><span class="line"><span class="attr">CONFIG</span> <span class="string">+= thread exceptions rtti stl</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># without c++11 &amp; AppKit library compiler can&#x27;t solve address for symbols</span></span><br><span class="line"><span class="attr">CONFIG</span> <span class="string">+= c++11</span></span><br><span class="line"><span class="attr">macx</span>: <span class="string">LIBS += -framework AppKit</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># 配置头文件搜索路径和链接库路径</span></span><br><span class="line"><span class="attr">unix</span>:<span class="string">!macx: LIBS += -L$$PWD/qBreakpad/lib/ -lqBreakpad</span></span><br><span class="line"></span><br><span class="line"><span class="attr">INCLUDEPATH</span> <span class="string">+= $$PWD/qBreakpad/include</span></span><br><span class="line"><span class="attr">DEPENDPATH</span> <span class="string">+= $$PWD/qBreakpad/include</span></span><br><span class="line"></span><br><span class="line"><span class="attr">unix</span>:<span class="string">!macx: PRE_TARGETDEPS += $$PWD/qBreakpad/lib/libqBreakpad.a</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">############ for qBreakpad ############</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>在main.cpp中添加</p><p><code> QBreakpadInstance.setDumpPath(&quot;crashes&quot;); // 设置生成dump文件路径</code></p><p>崩溃示例：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">qBreakpadTest::on_pushButton_clicked</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    QLabel * label = <span class="literal">nullptr</span>;</span><br><span class="line">    label-&gt;<span class="built_in">setText</span>(<span class="string">&quot;crash&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>编译，运行程序，生成的<code>dump</code>文件存放在<code>Debug/crashes</code>目录下。</p><h2 id="编译breakpad"><a class="header-anchor" href="#编译breakpad">¶</a>编译breakpad</h2><p><code>Breakpad</code>提供了两个工具<code>dump_syms</code>和<code>minidump_stackwalk</code>，用于分析<code>dump</code>，定位<code>bug</code>。</p><p>下载<code>Breakpad</code>源码，将<code>LSS(linux-syscall-support)</code>源码拷贝至<code>breakpad\src\third_party</code>目录下，并重命名为lss；</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> breakpad</span><br><span class="line"><span class="built_in">chmod</span> 755 configure</span><br><span class="line">./configure</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>编译完成后，在<code>breakpad/src/tools/linux/dump_syms</code>目录下，生成了<code>dump_syms</code>；</p><p>在<code>breakpad/src/processor</code>目录下，生成了<code>minidump_stackwalk</code>。</p><h2 id="使用dump-syms和minidump-stackwalk定位bug"><a class="header-anchor" href="#使用dump-syms和minidump-stackwalk定位bug">¶</a>使用dump_syms和minidump_stackwalk定位bug</h2><h3 id="1、生成符号文件"><a class="header-anchor" href="#1、生成符号文件">¶</a>1、生成符号文件</h3><p>使用<code>dump_syms</code>读取带调试信息的程序文件，并生成符号文件<code>qBreakpadTest.sym</code>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump_syms ./qBreakpadTest &gt; qBreakpadTest.sym</span><br></pre></td></tr></table></figure><h3 id="2、将符号文件移动到特定路径"><a class="header-anchor" href="#2、将符号文件移动到特定路径">¶</a>2、将符号文件移动到特定路径</h3><p>在自己的qt工程(qBreakpadTest)所在目录下，创建目录结构：</p><ul><li>第一级目录，固定为<code>symbols</code>；</li><li>第二级目录，为即将放入的<code>符号文件名称</code>，如<code>qBreakpadTest.sym</code>，则目录名为<code>qBreakpadTest</code>；</li><li>第三级目录，在sym文件中第一行内容，有一串<code>16进制</code>编号，将其作为<code>目录名</code>。</li></ul><p>建立好以上路径后，将<code>qBreakpadTest.sym</code>移动到此路径下。</p><h3 id="3、生成崩溃处调用堆栈信息"><a class="header-anchor" href="#3、生成崩溃处调用堆栈信息">¶</a>3、生成崩溃处调用堆栈信息</h3><p>将<code>crashes目录</code>拷贝到和<code>symbols目录</code>一个级别目录下；</p><p>然后执行如下命令，生成调用堆栈信息：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minidump_stackwalk ./crashes/7211c8b8-126d-4de2-7f8f00a4-db86eecc.dmp ./symbols &gt; error.log</span><br></pre></td></tr></table></figure><p>第一个参数，是dump文件名；<br>第二个参数，固定为./symbols，应该是指定符号文件位于当前symbols目录下默认路径位置；<br>第三个参数，将命令执行结果，写入到error.log文件中。</p><p>查看生成的堆栈调用信息文件<code>error.log</code>，找到<code>“crashed”</code>字样，与它最近的一行，就是发生崩溃时，程序的调用堆栈。</p><h3 id="4、dump文件上报"><a class="header-anchor" href="#4、dump文件上报">¶</a>4、dump文件上报</h3><p>将生成的<code>dump</code>文件上传到指定的服务器。</p><ul><li>先通过setDumpPath设置dump文件生成目录；以便在发生崩溃时，自动在该目录下生成dump文件。</li><li>再通过setUploadUrl设置上报地址，以便后续将dump文件，上传到该地址。</li><li>最后，通过sendDumps将dump文件发送至服务器。该函数会自动遍历，前面设置的dump生成目录，将每一个dump文件进行发送。</li></ul><p>上报演示程序，位于<code>qBreakpad\demo\reporter</code>下。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 研发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qt </tag>
+            
+            <tag> qBreakpad </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>u盘格式错误</title>
       <link href="/2023/05/05/u%E7%9B%98%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E4%B8%BARAW/"/>
       <url>/2023/05/05/u%E7%9B%98%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E4%B8%BARAW/</url>
@@ -109,6 +136,31 @@
             <tag> java </tag>
             
             <tag> android开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>qt获取屏幕分辨率</title>
+      <link href="/2023/04/23/qt%E5%BC%80%E5%8F%91--4/"/>
+      <url>/2023/04/23/qt%E5%BC%80%E5%8F%91--4/</url>
+      
+        <content type="html"><![CDATA[<p>qt获取屏幕分辨率</p><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取主屏分辨率 </span></span><br><span class="line"><span class="variable">QRect</span> <span class="variable">mRect</span>； </span><br><span class="line"><span class="variable">mRect</span> = <span class="variable">QGuiApplication</span>::<span class="function"><span class="title">primaryScreen</span>()-&gt;<span class="title">geometry</span>(); </span></span><br><span class="line"><span class="function"><span class="title">qDebug</span>()&lt;&lt;<span class="string">&quot;width:&quot;</span>&lt;&lt;<span class="variable">mRect.width</span>()&lt;&lt;<span class="string">&quot;  height:&quot;</span>&lt;&lt;<span class="variable">mRect.height</span>();</span></span><br></pre></td></tr></table></figure><p>.获取多个显示器屏幕大小</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取多显示器,通过list存储当前主机所有显示器 </span></span><br><span class="line">QList&lt;QScreen *&gt; list_screen = QGuiApplication::<span class="built_in">screens</span>(); </span><br><span class="line"><span class="comment">// 通过循环可以遍历每个显示器 </span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; list_screen.<span class="built_in">size</span>(); i++) </span><br><span class="line">&#123; </span><br><span class="line">    QRect rect = list_screen.<span class="built_in">at</span>(i)-&gt;<span class="built_in">geometry</span>(); </span><br><span class="line">    <span class="type">int</span> desktop_width = rect.<span class="built_in">width</span>(); </span><br><span class="line">    <span class="type">int</span> desktop_height = rect.<span class="built_in">height</span>(); </span><br><span class="line">    <span class="comment">// 打印屏幕分辨率 </span></span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; desktop_width &lt;&lt;desktop_height; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure><p>error：</p><p><a href="http://libQt5WebEngineCore.so">libQt5WebEngineCore.so</a>: .dynsym local <a href="https://so.csdn.net/so/search?q=symbol&amp;spm=1001.2101.3001.7020">symbol</a> at index 3</p><p>解决：sudo ln -sf /usr/bin/x86_64-linux-gnu-ld.gold /usr/bin/ld</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 研发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qt开发 </tag>
             
         </tags>
       
