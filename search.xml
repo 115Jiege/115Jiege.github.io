@@ -184,12 +184,18 @@
     
     
     <entry>
-      <title>VMware错误</title>
-      <link href="/2023/04/23/VMware%E9%94%99%E8%AF%AF/"/>
-      <url>/2023/04/23/VMware%E9%94%99%E8%AF%AF/</url>
+      <title>VScode通过SSH远程连接主机失败</title>
+      <link href="/2023/04/23/VScode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/"/>
+      <url>/2023/04/23/VScode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/</url>
       
-        <content type="html"><![CDATA[<p>记录一下在使用VMware workstation的过程中出现的问题。</p><h2 id="虚拟机正在使用"><a class="header-anchor" href="#虚拟机正在使用">¶</a>虚拟机正在使用</h2><p>VMware虚拟机由于一些原因卡死，用Windows任务管理器关闭VMware也关不掉，然后重启电脑，再次打开虚拟机报错。</p><p>错误信息：</p><p><code>该虚拟机似乎正在使用中。如果该虚拟机未在使用，请按“获取所有权(T)”按钮获取它的所有权。否则，请按“取消(C)”按钮以防损坏。</code></p><p>解决方法：</p><p>打开虚拟机所在文件夹，删除.lck结尾的文件夹(不放心的话可以转为备份文件)；重启VMware，即可打开虚拟机;</p><p>分析原因：</p><p>当运行一个“虚拟系统”时，为防止该系统被另外一个VMware程序打开，导致数据被修改或损坏，VMware会自动在该“虚拟系统”所在的文件夹下，生成三个锁定文件（虚拟系统锁定，虚拟磁盘锁定，虚拟内存锁定），分别为：”.vmx.lck”,”.vmdk.lck”,”.vmem.lck”；</p><p>在正常关机的情况下，这些文件会自动删除，当非正常关机的情况下，这些文件就不会自动删除，这就导致了再次打开Ubuntu的时候由于锁的存在而打不开。</p><h2 id="未能连接到虚拟机"><a class="header-anchor" href="#未能连接到虚拟机">¶</a>未能连接到虚拟机</h2><p>强制关闭虚拟机，再次打开时报错。</p><p>错误信息：</p><p><code>未能将管道连接到虚拟机: 所有的管道范例都在使用中。</code></p><p>解决方法：</p><p>打开任务管理器-&gt;详细信息：结束所有vm开头的任务(vmnet不用关);</p><p>分析原因：</p><p>有些相关进程没有关掉，导致管道未释放。</p><h2 id="网络连接失败"><a class="header-anchor" href="#网络连接失败">¶</a>网络连接失败</h2><p>在任务管理器中不小心关掉了vmnat.ext,vmnetdhcp.exe等VMware虚拟网络进程，导致虚拟机网络连接失败。</p><p>解决方法：</p><p>关闭虚拟机，编辑-&gt;虚拟网络编辑器-&gt;还原默认设置;</p>]]></content>
+        <content type="html"><![CDATA[<p>报错信息：</p><p><img src="/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-05-16-14-14-42-image.png" alt></p><p>原因：</p><p>我这里是之前安装过一个ubuntu2204，VMware分配了ip，并且使用ssh连接过这个ip。删除虚拟机后，再次安装的ubuntu又恰好被分配了此ip，但用户名或密码与之前不同。这使得本地记录的信息和现有本地记录的服务器信息和现有的产生了冲突，连接失败。</p><p>解决：</p><p><img src="/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-05-16-14-19-26-image.png" alt></p><p>把有冲突的本地记录删掉就好了，找到C:\Users\Administrator\ssh\known_hosts文件，删除冲突ip的信息。然后重新连接。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 杂七杂八 </category>
+          
+      </categories>
       
       
         <tags>
@@ -203,18 +209,12 @@
     
     
     <entry>
-      <title>VScode通过SSH远程连接主机失败</title>
-      <link href="/2023/04/23/VScode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/"/>
-      <url>/2023/04/23/VScode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/</url>
+      <title>VMware错误</title>
+      <link href="/2023/04/23/VMware%E9%94%99%E8%AF%AF/"/>
+      <url>/2023/04/23/VMware%E9%94%99%E8%AF%AF/</url>
       
-        <content type="html"><![CDATA[<p>报错信息：</p><p><img src="/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-05-16-14-14-42-image.png" alt></p><p>原因：</p><p>我这里是之前安装过一个ubuntu2204，VMware分配了ip，并且使用ssh连接过这个ip。删除虚拟机后，再次安装的ubuntu又恰好被分配了此ip，但用户名或密码与之前不同。这使得本地记录的信息和现有本地记录的服务器信息和现有的产生了冲突，连接失败。</p><p>解决：</p><p><img src="/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Cmarktext%5Cimages%5C2023-05-16-14-19-26-image.png" alt></p><p>把有冲突的本地记录删掉就好了，找到C:\Users\Administrator\ssh\known_hosts文件，删除冲突ip的信息。然后重新连接。</p>]]></content>
+        <content type="html"><![CDATA[<p>记录一下在使用VMware workstation的过程中出现的问题。</p><h2 id="虚拟机正在使用"><a class="header-anchor" href="#虚拟机正在使用">¶</a>虚拟机正在使用</h2><p>VMware虚拟机由于一些原因卡死，用Windows任务管理器关闭VMware也关不掉，然后重启电脑，再次打开虚拟机报错。</p><p>错误信息：</p><p><code>该虚拟机似乎正在使用中。如果该虚拟机未在使用，请按“获取所有权(T)”按钮获取它的所有权。否则，请按“取消(C)”按钮以防损坏。</code></p><p>解决方法：</p><p>打开虚拟机所在文件夹，删除.lck结尾的文件夹(不放心的话可以转为备份文件)；重启VMware，即可打开虚拟机;</p><p>分析原因：</p><p>当运行一个“虚拟系统”时，为防止该系统被另外一个VMware程序打开，导致数据被修改或损坏，VMware会自动在该“虚拟系统”所在的文件夹下，生成三个锁定文件（虚拟系统锁定，虚拟磁盘锁定，虚拟内存锁定），分别为：”.vmx.lck”,”.vmdk.lck”,”.vmem.lck”；</p><p>在正常关机的情况下，这些文件会自动删除，当非正常关机的情况下，这些文件就不会自动删除，这就导致了再次打开Ubuntu的时候由于锁的存在而打不开。</p><h2 id="未能连接到虚拟机"><a class="header-anchor" href="#未能连接到虚拟机">¶</a>未能连接到虚拟机</h2><p>强制关闭虚拟机，再次打开时报错。</p><p>错误信息：</p><p><code>未能将管道连接到虚拟机: 所有的管道范例都在使用中。</code></p><p>解决方法：</p><p>打开任务管理器-&gt;详细信息：结束所有vm开头的任务(vmnet不用关);</p><p>分析原因：</p><p>有些相关进程没有关掉，导致管道未释放。</p><h2 id="网络连接失败"><a class="header-anchor" href="#网络连接失败">¶</a>网络连接失败</h2><p>在任务管理器中不小心关掉了vmnat.ext,vmnetdhcp.exe等VMware虚拟网络进程，导致虚拟机网络连接失败。</p><p>解决方法：</p><p>关闭虚拟机，编辑-&gt;虚拟网络编辑器-&gt;还原默认设置;</p>]]></content>
       
-      
-      <categories>
-          
-          <category> 杂七杂八 </category>
-          
-      </categories>
       
       
         <tags>

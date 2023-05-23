@@ -266,3 +266,37 @@ font-style: normal;
     transform: scale(1.1);
   }
 }
+
+/* 电子时钟 */
+div#hexo_electric_clock{
+	background-color:#9b9ab8;
+}
+
+span#card-clock-clockdate{
+	color:#fff;
+}
+
+span#card-clock-weather{
+	color:#fff;
+}
+
+span#card-clock-time{
+	color:#fff;
+}
+
+span#card-clock-ip{
+	color:#fff;
+}
+
+span#card-clock-location{
+	color:#fff;
+}
+
+span#card-clock-dackorlight{
+	color:#fff;
+}
+/*GitHub开源圆角*/
+#card-info-btn {
+  border-radius: 7px;
+  overflow: hidden;
+}
