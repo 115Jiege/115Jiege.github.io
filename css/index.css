@@ -2310,7 +2310,7 @@ blockquote footer cite:before {
 }
 :root {
   --recent-post-bgcolor: rgba(255,255,255,0.9);
-  --article-content-bgcolor: rgba(196,194,231,0.8);
+  --article-content-bgcolor: rgba(155,154,184,0.8);
   --recent-post-arrow: #fff;
   --recent-post-cover-shadow: #fff;
   --recent-post-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
