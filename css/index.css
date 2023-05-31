@@ -2310,7 +2310,7 @@ blockquote footer cite:before {
 }
 :root {
   --recent-post-bgcolor: rgba(255,255,255,0.9);
-  --article-content-bgcolor: rgba(155,154,184,0.8);
+  --article-content-bgcolor: rgba(155,154,184,0.9);
   --recent-post-arrow: #fff;
   --recent-post-cover-shadow: #fff;
   --recent-post-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
@@ -2623,9 +2623,9 @@ blockquote footer cite:before {
     -o-transition: var(--recent-post-transition);
     -ms-transition: var(--recent-post-transition);
     transition: var(--recent-post-transition);
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
   }
   .recent-posts .recent-post-item .recent-post-content .recent-post-arrow {
     -webkit-transition: var(--recent-post-transition);
