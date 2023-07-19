@@ -19,13 +19,14 @@ div#poem_sentence{
   margin-bottom: 0.5rem;
   padding: 1rem;
   border-radius: 12px;
-  background: var(--heo-secondbg);
+  color:#fff;
+  background: #9b9ab8;
   min-height: 62px;
 }
 
 div#poem_info{
   display: flex;
-  color: var(--heo-secondtext);
+  color: #9b9ab8;
   font-size: 0.5rem;
   justify-content: center;
   flex-wrap: wrap;
@@ -40,7 +41,7 @@ div#poem_author{
 div#poem_dynasty{
   order: 0;
   padding: 2px 4px 2px 6px;
-  background: var(--heo-card-btn-bg);
-  color: var(--heo-fontcolor);
+  background: #9b9ab8;
+  color: #fff;
   border-radius: 8px;
 }
