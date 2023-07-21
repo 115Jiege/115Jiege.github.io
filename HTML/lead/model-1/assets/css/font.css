@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "ZhiMangXing";       
+    src:url("../webfonts/ZhiMangXing-Regular.ttf");       
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Mico-six";       
+    src:url("../webfonts/Mico-six/Micro-Six.ttf");       
+    font-weight: normal;
+    font-style: normal;
+}
